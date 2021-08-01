@@ -1,1 +1,126 @@
-﻿
+﻿#wrapper {
+    background-color: #49fcd4;
+    background-position: -50%, 10%;
+    background-repeat: repeat-y;
+    background-size: 75% auto;
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 50vw;
+    z-index: -1;
+}
+
+#wrapper section {
+    display: grid;
+    grid-template-areas: "header content";
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: 1fr;
+}
+
+#wrapper section:first-child {
+    margin-top: 0;
+}
+
+#wrapper section > header {
+    grid-area: header;
+    justify-self: end;
+    text-align: right;
+}
+
+#wrapper section > header h1 + p {
+    font-family: "Raleway", Helvetica, sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.175em;
+    line-height: 2.5;
+    text-transform: uppercase;
+}
+
+#wrapper section > header ul.actions {
+    justify-content: flex-end;
+}
+
+#wrapper section > .content {
+    grid-area: content;
+    max-width: 60rem;
+    position: relative;
+}
+
+#wrapper > section.intro {
+    align-items: center;
+}
+
+#wrapper > section.intro > .content {
+    height: 100vh;
+    max-width: none;
+}
+
+#wrapper section > header {
+    padding: 0 10rem 0 5rem;
+    width: 35rem;
+}
+
+.image.left,
+.image.right {
+    max-width: 40%;
+}
+
+.image.left img,
+.image.right img {
+    width: 100%;
+}
+
+.image.left {
+    float: left;
+    margin: 0 2rem 2rem 0;
+    top: 0.25rem;
+}
+
+.image.right {
+    float: right;
+    margin: 0 0 2rem 2rem;
+    top: 0.25rem;
+}
+
+.image.fit {
+    display: block;
+    margin: 0 0 2rem 0;
+    width: 100%;
+}
+
+    .image.fit img {
+        width: 100%;
+    }
+
+.image.main {
+    display: block;
+    margin: 3rem 0;
+    width: 100%;
+}
+
+.image.main img {
+    width: 100%;
+}
+
+.image.main:first-child {
+    margin-top: 0;
+}
+
+.image.fill {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.image.fill img {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+ 
