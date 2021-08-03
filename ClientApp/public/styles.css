@@ -43,10 +43,6 @@ section > .image {
     height: 100vh;
 }
 
-section > header ul.actions {
-justify-content: flex-end;
-}
-
 section.intro {
     background-color: #49fcd4;
     margin-top: 0;
@@ -69,14 +65,23 @@ section.first {
     position: relative;
 }
 
-    section.first h1 {
-        color: #49fcd4;
+    section.first > header h1 {
+        color: #49fcd4
+    }
+    section.first > header p {
+        color: #49fcd4
     }
 
-    section.first p {
-        color: #49fcd4;
-    }
-
+section.second {
+    background-color: #49fcd4;
+    margin-top: 0;
+    align-items: center;
+    display: grid;
+    grid-template-areas: "header image";
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: 1fr;
+    position: relative;
+}
 .image.fill img {
     height: 100%;
     left: 0;
