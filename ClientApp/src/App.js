@@ -1,10 +1,21 @@
 ﻿import React from 'react';
-import { Route } from 'react-router';
+import { Route, Switch } from 'react-router';
 import Home from './pages/Home';
+import Summary from './pages/Summary';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
     return (
-    <Home />
+        <div>
+            <Switch>
+                <Route exact path ="/">
+                    <Home />
+                </Route>
+                <Route path="/summary">
+                    <Summary />
+                </Route>
+                </Switch>
+            </div>
     );
 }
 
