@@ -138,3 +138,17 @@ a.arrow {
 .card:hover {
     box-shadow: 0 16px 16px 0 rgba(0,0,0,0.2);
 }
+
+.active {
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    font-size: 1.5rem;
+    line-height: .1;
+    margin: 0 0 1.5rem 0;
+    text-transform: none;
+    text-decoration: underline;
+}
+
+.nav-item:hover {
+    color: #49fcd4;
+    text-decoration: underline;
+}

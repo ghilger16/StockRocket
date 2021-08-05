@@ -11,6 +11,16 @@ const Summary = () => {
     return (
         <div>
             <Jumbotron />
+            <div class="row justify-content-around mt-3">
+                <div class="col-1 mt-5">
+                    <p class="ml-3">Details</p>
+                </div>
+                <div class="col-3">
+                    <p>Buy and sell stocks</p>
+                 </div>
+            </div>
+            <div class="row justify-content-center">
+            <div class="col-8 ml-5">
             <TabNav tabs={["Performance", "Activity", "Asset Classes", "Holdings"]} selected={selected} setSelected={setSelected}>
                 <Tab isSelected={selected === "Performance"}>
                     <Jumbotron />
@@ -18,7 +28,9 @@ const Summary = () => {
                 <Tab isSelected={selected === "Activity"}>
                     <Home />
                 </Tab>
-                </TabNav>
+                    </TabNav>
+                </div>
+                </div>
        </div>
     );
 };

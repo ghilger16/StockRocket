@@ -4,9 +4,9 @@
 const TabNav = (props) => {
     return (
         <div>
-            <div class="card text-center mx-auto">
-                <div class="card-header">
-                    <ul className="nav nav-pills card-header-pills mx-auto">
+            <div class="text-center mx-auto">
+                <div>
+                    <ul className="nav">
                         {props.tabs.map((tab) => {
                             const active = tab === props.selected ? " active" : "";
 
@@ -19,7 +19,7 @@ const TabNav = (props) => {
                                     >
                                         {tab}
                                     </a>
-                                </li>
+                                    </li>
                             );
                         })}
                     </ul>
