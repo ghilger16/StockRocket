@@ -1,5 +1,13 @@
 ﻿@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600,700,300i,600i,700i|Raleway:600,800");
 
+/* Basic */
+
+:root {
+    --clr-primary-400: #49fcd4;
+    --ff-primary: "Raleway", Helvetica, sans-serif;
+    --ff-accent: "Source Sans Pro", Helvetica, sans-serif;
+}
+
 body {
     overflow-x: hidden;
 }
@@ -7,43 +15,31 @@ body {
 html {
     scroll-behavior: smooth;
 }
-  
 
-section > header {
+/* Typography */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--ff-accent);
+    letter-spacing: -0.05em;
+    margin: 0 0 1.5rem 0;
+}
+
+p, .nav-item {
+    color: #000000;
+    font-family: var(--ff-primary);
+    letter-spacing: 0.175em;
+    margin: 0 0 1.5rem 0;
+    text-transform: uppercase;
+}
+
+/* Section */
+
+header {
     grid-area: header;
     justify-self: end;
     text-align: left;
     padding: 0 10rem 0 5rem;
     width: 35rem;
-}
-
- h1,h2,h3,h4,h5,h6, section > header h1 {
-    font-family: "Source Sans Pro", Helvetica, sans-serif;
-    font-size: 5rem;
-    font-weight: 700;
-    letter-spacing: -0.05em;
-    line-height: .8;
-    margin: 0 0 1.5rem 0;
-    text-transform: none;
-}
-.details {
-    font-family: "Source Sans Pro", Helvetica, sans-serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: -0.05em;
-    line-height: .8;
-    margin: 0 0 1.5rem 0;
-    text-transform: none;
-}
-
- p, .nav-item {
-    color: #000000;
-    font-family: "Raleway", Helvetica, sans-serif;
-    font-weight: 600;
-    letter-spacing: 0.175em;
-    line-height: 1.75;
-    margin: 0 0 1.5rem 0;
-    text-transform: uppercase;
 }
 
 section > .image {
@@ -53,8 +49,8 @@ section > .image {
     height: 100vh;
 }
 
-section.intro {
-    background-color: #49fcd4;
+section.intro , section.first, section.second {
+    background-color: var(--clr-primary-400);
     margin-top: 0;
     align-items: center;
     display: grid;
@@ -66,32 +62,13 @@ section.intro {
 
 section.first {
     background-color: black;
-    margin-top: 0;
-    align-items: center;
-    display: grid;
     grid-template-areas: "image header";
-    grid-template-columns: 50vw 50vw;
-    grid-template-rows: 1fr;
-    position: relative;
 }
 
-    section.first > header h1 {
-        color: #49fcd4
-    }
-    section.first > header p {
-        color: #49fcd4
-    }
-
-section.second {
-    background-color: #49fcd4;
-    margin-top: 0;
-    align-items: center;
-    display: grid;
-    grid-template-areas: "header image";
-    grid-template-columns: 50vw 50vw;
-    grid-template-rows: 1fr;
-    position: relative;
+section.first h1, section.first p {
+    color: var(--clr-primary-400);
 }
+
 .image.fill img {
     height: 100%;
     left: 0;
@@ -111,21 +88,17 @@ a.arrow {
     height: 4rem;
     position: relative;
     width: 6rem;
-    background-color: #49fcd4;
+    background-color: var(--clr-primary-400);
 }
 
-.summary-jumbotron h1 {
-    font-family: "Source Sans Pro", Helvetica, sans-serif;
-    font-size: 2.5rem;
-    font-weight: 600;
-    letter-spacing: .03em;
-    line-height: .8;
-    margin: 0 0 1.5rem 0;
-    text-transform: none;
+/* Summary */
+
+.summary h1 {
+    font-weight: 700;
 }
 
 .summary-jumbotron i {
-    color: #49fcd4;
+    color: var(--clr-primary-400);
     transform: scale(1.5);
 }
 
@@ -142,8 +115,8 @@ a.arrow {
 .active {
     text-decoration: underline !important;
     text-decoration-thickness: .25rem !important;
-    text-decoration-color: #49fcd4 !important;
+    text-decoration-color: var(--clr-primary-400) !important;
 }
 .nav-item:hover {
-    color: #49fcd4;
+    color: var(--clr-primary-400);
 }

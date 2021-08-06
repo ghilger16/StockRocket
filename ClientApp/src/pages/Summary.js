@@ -9,11 +9,11 @@ import Home from "./Home"
 const Summary = () => {
     const [selected, setSelected] = useState("Performance");
     return (
-        <div>
+        <div class="summary">
             <Jumbotron />
             <div class="row justify-content-around mt-3">
                 <div class="col-1 mt-5">
-                    <h1 class="details ml-3">Details</h1>
+                    <h1 class="ml-3">Details</h1>
                 </div>
                 <div class="col-3">
                     <p>Buy and sell stocks</p>
