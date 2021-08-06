@@ -6,13 +6,14 @@ const TabNav = (props) => {
         <div>
             <div class="text-center mx-auto">
                 <div>
-                    <ul className="nav">
+                    <ul class="nav border border-top-0 border-left-0 border-right-0 border-bottom-dark">
                         {props.tabs.map((tab) => {
                             const active = tab === props.selected ? " active" : "";
 
                             return (
-                                <li className="nav-item" key={tab}>
+                                <li class="nav-item  mb-1" key={tab}>
                                     <a
+                                        
                                         
                                         className={"nav-link" + active}
                                         onClick={() => props.setSelected(tab)}

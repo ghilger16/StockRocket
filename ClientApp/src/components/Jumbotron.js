@@ -22,11 +22,11 @@ const Jumbotron = () => {
                 </div>
                 <div class="row">
                     <div class="col-4">
-                        <h2 class="d-flex justify-content-end">Earnings</h2>
+                        <h3 class="d-flex justify-content-end">Earnings</h3>
                         <p class="d-flex justify-content-end">300</p>
                     </div>
                     <div class="col-2">
-                        <h2 class="d-flex justify-content-center">Earnings</h2>
+                        <h3 class="d-flex justify-content-center">Returns</h3>
                         <p class="d-flex justify-content-center">300</p>
                     </div>
 
