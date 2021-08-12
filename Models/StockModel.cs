@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace StockRocket.Models
 {
-    public class ApplicationUser : IdentityUser
+    public class StockModel
     {
+        public string symbol { get; set; }
     }
 }
