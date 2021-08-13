@@ -5,9 +5,11 @@ import Jumbotron from "../components/Jumbotron"
 import TabNav from "../components/TabNav"
 import Tab from "../components/Tab"
 import Home from "./Home"
-
+import useShowModal from "../hooks/useShowModal";
+import TradingModal from "../components/TradingModal"
 const Summary = () => {
     const [selected, setSelected] = useState("Performance");
+    const [showModal, ref] = useShowModal();
     return (
         <div class="summary">
             <Jumbotron />
@@ -16,7 +18,8 @@ const Summary = () => {
                     <h1 class="ml-3">Details</h1>
                 </div>
                 <div class="col-3">
-                    <p>Buy and sell stocks</p>
+                    <p ref={ref}>Buy and sell stocks</p>
+                    <TradingModal show={showModal}/>
                  </div>
             </div>
             <div class="row justify-content-center">
