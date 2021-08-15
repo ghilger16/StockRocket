@@ -1,11 +1,11 @@
 ﻿import React from "react";
-
+import Signup from "../components/Signup"
 const TradingModal = () => {
 
     return (
         <div>
-            <h1>Modal</h1>
-    </div>
+            <Signup />
+        </div>
     )
 };
 

@@ -12,43 +12,48 @@ const Summary = () => {
     const [selected, setSelected] = useState("Performance");
     const [showModal, setShowModal] = useState(false);
 
-   
+    
     return (
-        <div class="summary" >
+        <div class="summary">
+            
 
             <Jumbotron />
-
+          
+          
             <div class="row justify-content-around mt-3">
                 <div class="col-1 mt-5">
                     <h1 class="ml-3">Details</h1>
                 </div>
-
+                
                 <div class="col-3">
                     <p onClick={() => setShowModal(true)} > Buy and sell stocks</p>
                     <Modal open={showModal} onClose={() => setShowModal(false)}>
-                        <TradingModal onClose={() => setShowModal(false)} />
-                        </Modal>
-                 </div>
-            </div>
+                        <TradingModal />
+                    </Modal>
+                </div>
 
-            <div class="row justify-content-center">
-                <div class="col-8 ml-5">
-            <TabNav tabs={["Performance", "Activity", "Asset Classes", "Holdings"]} selected={selected} setSelected={setSelected}>
-                <Tab isSelected={selected === "Performance"}>
-                    <h1>Performance</h1>
-                </Tab>
-                <Tab isSelected={selected === "Activity"}>
-                    <h1>Activity</h1>
-                        </Tab>
-                <Tab isSelected={selected === "Asset Classes"}>
-                    <h1>Asset Classes</h1>
-                </Tab>
-                <Tab isSelected={selected === "Holdings"}>
-                    <h1>Holdings</h1>
-                </Tab>
-                    </TabNav>
+            </div>
+            {showModal ? "" :
+                <div class="row justify-content-center">
+                    <div class="col-8 ml-5">
+
+                        <TabNav tabs={["Performance", "Activity", "Asset Classes", "Holdings"]} selected={selected} setSelected={setSelected}>
+                            <Tab isSelected={selected === "Performance"}>
+                                <h1>Performance</h1>
+                            </Tab>
+                            <Tab isSelected={selected === "Activity"}>
+                                <h1>Activity</h1>
+                            </Tab>
+                            <Tab isSelected={selected === "Asset Classes"}>
+                                <h1>Asset Classes</h1>
+                            </Tab>
+                            <Tab isSelected={selected === "Holdings"}>
+                                <h1>Holdings</h1>
+                            </Tab>
+                        </TabNav>
+                    </div>
                 </div>
-                </div>
+            }
        </div>
     );
 };
