@@ -1,18 +1,11 @@
 ﻿import React from "react";
 
-const TradingModal = ({ show }) => {
+const TradingModal = () => {
+
     return (
-    <div>
-        {show ?
-        //<div class="modal-wrapper">
-        //    <div class="modal-backdrop">
-        //        <div class="modal-card">
-                    <h1>Modal</h1>
-        //        </div>
-        //    </div>
-        //</div >
-                : null}
-            </div>
+        <div>
+            <h1>Modal</h1>
+    </div>
     )
 };
 
