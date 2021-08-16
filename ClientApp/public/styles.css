@@ -132,18 +132,22 @@ a.arrow {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,.7);
-    z-index: 1000;
+    background-color: rgba(71,200,170,.25);
 }
 
-.modal-content {
+.modal-container {
     position: fixed;
     top: 50%;
-    right: 50%;
-    transform: translate(-50%,-50%);
-    background-color: white;
+    left: 50%;
+    transform: translate(-55%, -75%);
+    padding: 5px;
     z-index: 1000;
-    
+    width: 30%;
+    height: 55%;
+    background-color: white;
+    border-radius: 15px;
 }
+
+
  
 

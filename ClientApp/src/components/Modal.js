@@ -4,16 +4,16 @@ import ReactDom from "react-dom";
 const Modal = ({ open, children, onClose }) => {
     if (!open) return null
 
-    return  (
+    return ReactDom.createPortal(
         <>
             <div class="modal-wrapper" />
-            <div class="modal-content">
-
-                <button onClick={onClose}> X </button>
+            <div class="modal-container">
+                <h1 class="d-flex justify-content-end mr-2"onClick={onClose}> <i class="ri-close-line"/> </h1>
                 {children}
-
             </div>
-        </>
+            
+        </>,
+        document.getElementById('portal')
         
     );
 };

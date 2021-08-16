@@ -8,11 +8,11 @@ import { ContextProvider } from "./contexts/Context";
 const rootElement = document.getElementById('root');
 
 ReactDOM.render(
-    <ContextProvider>
-  <BrowserRouter>
+<ContextProvider>
+<BrowserRouter>
     <App />
-        </BrowserRouter>
-        </ContextProvider>,
+</BrowserRouter>
+</ContextProvider>,
   rootElement);
 
 
