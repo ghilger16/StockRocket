@@ -8,6 +8,23 @@ namespace StockRocket.Models
 {
     public class StockModel
     {
-        public string symbol { get; set; }
+        public string Symbol { get; set; }
+
+        public string CompanyName { get; set; }
+
+        public double PreviousClose { get; set; }
+
+        public bool IsUSMarketOpen { get; set; }
+
+        public double LatestPrice { get; set; }
+
+        public double Change { get; set; }
+
+        public double ChangePercent { get; set; }
+
+        public double Week52High { get; set; }
+
+        public double Week52Low { get; set; }
+
     }
 }

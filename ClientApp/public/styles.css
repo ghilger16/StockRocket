@@ -148,6 +148,19 @@ a.arrow {
     border-radius: 15px;
 }
 
+.negative {
+    color: red;
+}
 
- 
+.positive {
+    color: green;
+}
+
+.rocket-image img {
+    height: 40%;
+    left: 30%;
+    position: relative;
+    top: 30px;
+    width: 40%;
+}
 

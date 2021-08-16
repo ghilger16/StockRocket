@@ -1,16 +1,30 @@
 ﻿import React, { useState, useEffect } from "react";
+import axios from 'axios';
 
 const Context = React.createContext();
 
 const ContextProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState();
+    const [error, setError] = useState('');
+    const [stockInfo, setStockInfo] = useState([]);
 
-    //function for signup (email, password){
-    //setCurrentUser(user)
-
+    const getStockInfo = async (searchQuery) => {
+        axios
+            .get(`/stock/${searchQuery}`)
+            .then((response) => {setStockInfo(response.data)     
+            })
+            .catch((error) => {
+                setError(`No information found for ${searchQuery}`);
+            });
+    };
 
     const value = {
-        currentUser
+        currentUser,
+        getStockInfo,
+        stockInfo,
+        setStockInfo,
+        error,
+        setError
     }
     return (
         <Context.Provider value={value}>

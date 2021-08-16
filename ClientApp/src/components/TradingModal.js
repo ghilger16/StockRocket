@@ -1,57 +1,101 @@
-﻿import React from "react";
-import Signup from "../components/Signup"
+﻿import React, { useState, useContext } from "react";
+import { Context } from "../contexts/Context";
+import { Alert } from "react-bootstrap";
 
 const TradingModal = () => {
+    const [searchQuery, setSearchQuery] = useState("");
+    const { getStockInfo, stockInfo, setStockInfo, error, setError } = useContext(Context);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (searchQuery === "") {
+            return setError("Search Form is Empty!");
+        }
+        getStockInfo(searchQuery);
+        setError("");
+    };
+
+    const handleOnChange = (e) => {
+        setSearchQuery(e.target.value.split(" ").join(""));
+        if (!searchQuery) {
+            setError("");
+            setStockInfo("");
+        };
+    }
+   
+    const currentPrice = stockInfo.isUSMarketOpen ? stockInfo.latestPrice : stockInfo.previousClose;
+    const changePercent = stockInfo.changePercent * 100;
+    const isNegative = (Math.sign(stockInfo.change) == -1) ? "negative" : "positive";
+    
 
     return (
         <div>
 
             <h1 class="d-flex justify-content-center">Enter Order</h1>
+            {error && <Alert variant="danger">{error}</Alert>}
             <div class="container">
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-5 mt-2">
+
                         <h4>Symbol</h4>
-                        <input type="input" class="form-control"/>
+                        <form onSubmit={handleSubmit}>
+                            <input type="input" class="form-control" onChange={handleOnChange}/>
+                        </form>
+
                     </div>
                     <div class="col ml-3">
-                        <p>Current position:</p>
-                        <p>526 Shares</p>
+
+                        <p></p>
+                        <p></p>
+
                     </div>
                 </div>
             </div>
 
-            <h3 class="d-flex justify-content-start mt-3 ml-5">OpenDoor Technologies</h3>
-            <div class="container ml-5">
-                <div class="row">
-                    <div class="col-4 border-top border-right">
-                        <h4>$17.55</h4>
-                        <h4>-.43 (-2.39%)</h4>
-                    </div>
-                    <div class="col-5 border-top">
-                        <h4>52 week range</h4>
-                        <h4>Volume</h4>
-                    </div>
-                </div>
-            </div>
+            {(stockInfo.symbol && searchQuery) ?
+                <div>
+                    <h3 class="d-flex justify-content-start mt-4 ml-5">{stockInfo.companyName}</h3>
+                    <div class="container ml-5">
+                        <div class="row">
+                            <div class="col-4 border-top border-right">
 
-            <div class="container mt-4">
-                <div class="row ml-5">
-                    <div class="col-4">
-                        <h5>Quantity (shares)</h5>
-                        <input type="input" class="form-control" />
-                     </div>
-                    <div class="col ml-5">
-                        <h5>Estimated Balance</h5>
-                        <p>$--.--</p>
-                    </div>
-                </div>
-            </div>
+                                <h5>{currentPrice}</h5>
+                                <h5 class={isNegative}>{stockInfo.change}  ({changePercent.toFixed(2)}%)</h5>
 
-            <div class="d-flex justify-content-center mt-4">
-                <button class="btn btn-primary">Submit</button>
+                            </div>
+                            <div class="col-6 border-top">
+
+                                <h5>52 week range {stockInfo.week52Low.toFixed(2)} - {stockInfo.week52High.toFixed(2)}</h5>
+                                <h5>Volume</h5>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container mt-4">
+                        <div class="row ml-5">
+                            <div class="col-4">
+
+                                <h5>Quantity (shares)</h5>
+                                <input type="input" class="form-control" />
+
+                            </div>
+                            <div class="col ml-5">
+
+                                <h5>Estimated Balance</h5>
+                                <p>$--.--</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-center mt-4">
+                        <button class="btn btn-primary">Submit</button>
+                    </div> 
                 </div>
+                : <span class="rocket-image"><img src="images/rocket.jpg" alt="" /></span>}
         </div>
-    )
+    );
+        
 };
 
 export default TradingModal

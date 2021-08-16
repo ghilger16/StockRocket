@@ -12,8 +12,7 @@ import Holdings from "../components/Holdings"
 const Summary = () => {
     const [selected, setSelected] = useState("Performance");
     const [showModal, setShowModal] = useState(true);
-
-    
+ 
     return (
         <>
         <div class="summary">
@@ -21,15 +20,18 @@ const Summary = () => {
             <Jumbotron />
           
          <div class="row justify-content-around mt-3">
-                <div class="col-1 mt-5">
-                    <h1 class="ml-3">Details</h1>
+                    <div class="col-1 mt-5">
+
+                        <h1 class="ml-3">Details</h1>
+
                 </div>
-                
-                <div class="col-3">
+                    <div class="col-3">
+
                     <p class="nav-item"onClick={() => setShowModal(true)} ><i class="ri-add-line" /> Buy and sell stocks</p>
                         <Modal open={showModal} onClose={() => setShowModal(false)}>
                             <TradingModal />
-                    </Modal>
+                        </Modal>
+
                 </div>
         </div>
 
