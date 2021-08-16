@@ -15,8 +15,8 @@ const TradingModal = () => {
         setError("");
     };
 
-    const handleOnChange = (e) => {
-        setSearchQuery(e.target.value.split(" ").join(""));
+    const handleOnChange = ({ target }) => {
+        setSearchQuery(target.value.split(" ").join("").toUpperCase());
         if (!searchQuery) {
             setError("");
             setStockInfo("");
@@ -39,7 +39,7 @@ const TradingModal = () => {
 
                         <h4>Symbol</h4>
                         <form onSubmit={handleSubmit}>
-                            <input type="input" class="form-control" onChange={handleOnChange}/>
+                            <input type="input" value={searchQuery.toUpperCase()} onChange={handleOnChange}/>
                         </form>
 
                     </div>

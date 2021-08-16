@@ -7,6 +7,7 @@ const ContextProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState();
     const [error, setError] = useState('');
     const [stockInfo, setStockInfo] = useState([]);
+    const [userShareQuantity, setUserShareQuantity] = useState(0);
 
     const getStockInfo = async (searchQuery) => {
         axios
