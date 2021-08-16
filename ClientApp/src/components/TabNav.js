@@ -13,8 +13,7 @@ const TabNav = (props) => {
                             return (
                                 <li class="nav-item  mb-1" key={tab}>
                                     <a
-                                        
-                                        
+
                                         className={"nav-link" + active}
                                         onClick={() => props.setSelected(tab)}
                                     >

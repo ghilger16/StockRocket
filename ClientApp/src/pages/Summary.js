@@ -26,7 +26,7 @@ const Summary = () => {
                 </div>
                 
                 <div class="col-3">
-                    <p onClick={() => setShowModal(true)} > Buy and sell stocks</p>
+                    <p class="nav-item"onClick={() => setShowModal(true)} ><i class="ri-add-line" /> Buy and sell stocks</p>
                         <Modal open={showModal} onClose={() => setShowModal(false)}>
                             <TradingModal />
                     </Modal>
@@ -37,7 +37,7 @@ const Summary = () => {
         <div class="row justify-content-center">
                 <div class="col-8 ml-5">
 
-                    <TabNav tabs={["Performance", "Activity", "Asset Classes", "Holdings"]} selected={selected} setSelected={setSelected}>
+                        <TabNav tabs={["Performance", "Activity", "Asset Classes", "Holdings"]} selected={selected} setSelected={setSelected}>
                         <Tab isSelected={selected === "Performance"}>
                             <h1>Performance</h1>
                         </Tab>
