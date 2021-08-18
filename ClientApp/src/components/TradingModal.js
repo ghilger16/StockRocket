@@ -4,41 +4,56 @@ import { Alert } from "react-bootstrap";
 
 const TradingModal = () => {
     const [searchQuery, setSearchQuery] = useState("");
-    const { getStockInfo, stockInfo, setStockInfo, error, setError } = useContext(Context);
+    const [alertVariant, setAlertVariant] = useState("danger");
+    const { getStockInfo, stockInfo, setStockInfo, error, setError, userShareQuantity, setUserShareQuantity, setUserHoldings, userHoldings } = useContext(Context);
 
-    const handleSubmit = (e) => {
+    const handleStockInfoSubmit = (e) => {
         e.preventDefault();
-        if (searchQuery === "") {
-            return setError("Search Form is Empty!");
-        }
         getStockInfo(searchQuery);
-        setError("");
     };
 
-    const handleOnChange = ({ target }) => {
-        setSearchQuery(target.value.split(" ").join("").toUpperCase());
+    const handleOnChange = (e) => {
+        setSearchQuery(e.target.value.split(" ").join("").toUpperCase());
         if (!searchQuery) {
             setError("");
             setStockInfo("");
         };
-    }
+    };
+
+    const handleUserHoldingsSubmit = (e) => {
+        e.preventDefault();
+        if (!userShareQuantity) {
+            return setError("Quantity Form is Empty!");
+        };
+        let newPurchase = {
+            id: Math.random(),
+            symbol: stockInfo.symbol,
+            companyName: stockInfo.companyName,
+            shares: userShareQuantity,
+        };
+        console.log(newPurchase);
+        const newPurchaseArray = [...userHoldings, newPurchase];
+        setUserHoldings(newPurchaseArray);
+        setAlertVariant("success");
+        setError("Order Placed!");
+    };
    
-    const currentPrice = stockInfo.isUSMarketOpen ? stockInfo.latestPrice : stockInfo.previousClose;
+    const currentPrice = !stockInfo.isUSMarketOpen ? stockInfo.latestPrice : stockInfo.close;
     const changePercent = stockInfo.changePercent * 100;
     const isNegative = (Math.sign(stockInfo.change) == -1) ? "negative" : "positive";
+    const estimatedBalance = userShareQuantity ? userShareQuantity * currentPrice : "--.--";
     
 
     return (
         <div>
-
             <h1 class="d-flex justify-content-center">Enter Order</h1>
-            {error && <Alert variant="danger">{error}</Alert>}
+            {error && searchQuery && <Alert variant={alertVariant}>{error}</Alert>}
             <div class="container">
                 <div class="row">
                     <div class="col-5 mt-2">
 
                         <h4>Symbol</h4>
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleStockInfoSubmit}>
                             <input type="input" value={searchQuery.toUpperCase()} onChange={handleOnChange}/>
                         </form>
 
@@ -77,19 +92,20 @@ const TradingModal = () => {
                             <div class="col-4">
 
                                 <h5>Quantity (shares)</h5>
-                                <input type="input" class="form-control" />
-
+                                <form onSubmit={handleUserHoldingsSubmit}>
+                                <input type="input" class="form-control" onChange={(e) => setUserShareQuantity(e.target.value)} />
+                                </form>
                             </div>
                             <div class="col ml-5">
 
                                 <h5>Estimated Balance</h5>
-                                <p>$--.--</p>
+                                <p>{`$${estimatedBalance}`}</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="d-flex justify-content-center mt-4">
-                        <button class="btn btn-primary">Submit</button>
+                        <button class="btn btn-primary" onClick={handleUserHoldingsSubmit}>Submit</button>
                     </div> 
                 </div>
                 : <span class="rocket-image"><img src="images/rocket.jpg" alt="" /></span>}

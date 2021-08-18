@@ -1,16 +1,29 @@
-﻿import React from "react";
+﻿import React, { useContext } from "react";
+import { Context } from "../contexts/Context";
 
 const Holdings = () => {
-    return (
+    const { userHoldings } = useContext(Context);
+    const renderTableData = () => {
+        return userHoldings.map((holding) => {
+                  return (
+                <tr>
+                    <td>{holding.symbol}</td>
+                    <td>{holding.companyName}</td>
+                </tr>
+
+            );
+        });
+    };
+                    return (
         <table class="table table-hover table-lg">
-            <thead class="thead-light">
+            <thead>
                 <tr>
                     <th>Ticker</th>
                     <th> Fund / Investment </th>
-                    <th> Balance </th>
+                    <th> Amount </th>
                 </tr>
             </thead>
-            <tbody></tbody>
+            <tbody>{renderTableData()}</tbody>
         </table>
     );
 };

@@ -8,7 +8,7 @@ const Jumbotron = () => {
             <div class="bg-light">
                 <div class="row">
                     <div class="col-7">
-                        <h1 class="d-flex justify-content-end mt-1 mr-5"><i class="ri-rocket-2-fill mr-4 mt-2"></i>Gregory Hilger - Account Summary</h1>
+                        <h1 class="d-flex justify-content-end mt-3 mr-5"><i class="ri-rocket-2-fill mr-4 mt-2"></i>Gregory Hilger - Account Summary</h1>
                     </div>
                     <div class="col-2 ml-5">
                         <div class="container mt-4 ml-5">

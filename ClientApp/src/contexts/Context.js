@@ -5,10 +5,11 @@ const Context = React.createContext();
 
 const ContextProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState();
-    const [error, setError] = useState('');
+    const [error, setError] = useState("");
     const [stockInfo, setStockInfo] = useState([]);
+    const [userHoldings, setUserHoldings] = useState([]);
     const [userShareQuantity, setUserShareQuantity] = useState(0);
-
+  
     const getStockInfo = async (searchQuery) => {
         axios
             .get(`/stock/${searchQuery}`)
@@ -19,13 +20,18 @@ const ContextProvider = ({ children }) => {
             });
     };
 
+   
     const value = {
         currentUser,
         getStockInfo,
         stockInfo,
         setStockInfo,
         error,
-        setError
+        setError,
+        userShareQuantity,
+        setUserShareQuantity,
+        setUserHoldings,
+        userHoldings
     }
     return (
         <Context.Provider value={value}>

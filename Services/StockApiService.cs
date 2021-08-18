@@ -25,7 +25,7 @@ namespace StockRocket.Services
 
         public async Task<StockModel> GetStockPrice(string searchQuery)
         {
-            var url = $"https://sandbox.iexapis.com/stable/stock/{searchQuery}/quote?token=Tpk_0f3dfa80f9cf4b5196cd5cefb08cd75a";
+            var url = $"https://cloud.iexapis.com/stable/stock/{searchQuery}/quote?token=sk_f21727cb9ce3414c95535a48f85b8174";
             string json;
             json = await GetTweetsAsync(url);
 
@@ -35,12 +35,9 @@ namespace StockRocket.Services
 
         private async Task<string> GetTweetsAsync(string url)
         {
-            //var accessToken = _config["AccessToken"];
             using (var client = new HttpClient())
             {
-                //client.DefaultRequestHeaders.Authorization
-                //    = new AuthenticationHeaderValue("pk_22281ef262514bf88cec95667f672a51");
-
+              
                 var completedUrl = new Uri(url);
                 var response = await client.GetAsync(completedUrl);
 

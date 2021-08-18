@@ -27,7 +27,7 @@ const Summary = () => {
                 </div>
                     <div class="col-3">
 
-                    <p class="nav-item"onClick={() => setShowModal(true)} ><i class="ri-add-line" /> Buy and sell stocks</p>
+                    <p class="nav-item" onClick={(e) => setShowModal(true)} ><i class="ri-add-line" /> Buy and sell stocks</p>
                         <Modal open={showModal} onClose={() => setShowModal(false)}>
                             <TradingModal />
                         </Modal>
