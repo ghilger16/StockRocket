@@ -27,13 +27,13 @@ namespace StockRocket.Services
         {
             var url = $"https://cloud.iexapis.com/stable/stock/{searchQuery}/quote?token=sk_f21727cb9ce3414c95535a48f85b8174";
             string json;
-            json = await GetTweetsAsync(url);
+            json = await GetIEXAsync(url);
 
             return JsonConvert.DeserializeObject<StockModel>(json);
 
         }
 
-        private async Task<string> GetTweetsAsync(string url)
+        private async Task<string> GetIEXAsync(string url)
         {
             using (var client = new HttpClient())
             {

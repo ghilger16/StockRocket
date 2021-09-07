@@ -4,8 +4,7 @@ import { Alert } from "react-bootstrap";
 
 const TradingModal = () => {
     const [searchQuery, setSearchQuery] = useState("");
-    const [alertVariant, setAlertVariant] = useState("danger");
-    const { getStockInfo, stockInfo, setStockInfo, error, setError, userShareQuantity, setUserShareQuantity, setUserHoldings, userHoldings } = useContext(Context);
+    const { getStockInfo, stockInfo, setStockInfo, error, setAlertError, userShareQuantity, setUserShareQuantity, setUserHoldings, userHoldings, setAlertVariant, alertVariant } = useContext(Context);
 
     const handleStockInfoSubmit = (e) => {
         e.preventDefault();
@@ -15,27 +14,27 @@ const TradingModal = () => {
     const handleOnChange = (e) => {
         setSearchQuery(e.target.value.split(" ").join("").toUpperCase());
         if (!searchQuery) {
-            setError("");
+            setAlertError("");
             setStockInfo("");
+            setUserShareQuantity("");
         };
     };
 
     const handleUserHoldingsSubmit = (e) => {
         e.preventDefault();
         if (!userShareQuantity) {
-            return setError("Quantity Form is Empty!");
-        };
-        let newPurchase = {
+            return setAlertError("Value Cannot Be Accepted", "danger");
+        }
+            let newPurchase = {
             id: Math.random(),
             symbol: stockInfo.symbol,
             companyName: stockInfo.companyName,
             shares: userShareQuantity,
         };
-        console.log(newPurchase);
         const newPurchaseArray = [...userHoldings, newPurchase];
         setUserHoldings(newPurchaseArray);
-        setAlertVariant("success");
-        setError("Order Placed!");
+        setAlertError("Order Placed!", "success");
+        
     };
    
     const currentPrice = !stockInfo.isUSMarketOpen ? stockInfo.latestPrice : stockInfo.close;
@@ -50,7 +49,7 @@ const TradingModal = () => {
             {error && searchQuery && <Alert variant={alertVariant}>{error}</Alert>}
             <div class="container">
                 <div class="row">
-                    <div class="col-5 mt-2">
+                    <div class="col-5">
 
                         <h4>Symbol</h4>
                         <form onSubmit={handleStockInfoSubmit}>
@@ -93,7 +92,7 @@ const TradingModal = () => {
 
                                 <h5>Quantity (shares)</h5>
                                 <form onSubmit={handleUserHoldingsSubmit}>
-                                <input type="input" class="form-control" onChange={(e) => setUserShareQuantity(e.target.value)} />
+                                <input type="number" class="form-control" onChange={(e) => setUserShareQuantity(e.target.value)} />
                                 </form>
                             </div>
                             <div class="col ml-5">

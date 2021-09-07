@@ -18,6 +18,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.16" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.16" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.16" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.9" />
+    <PackageReference Include="NHibernate" Version="5.3.9" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,6 +35,10 @@
     <None Remove="ClientApp\src\contexts\" />
     <None Remove="Services\" />
     <None Remove="ClientApp\src\hooks\" />
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="Microsoft.SqlServer.SqlManagementObjects.SSMS" />
+    <None Remove="NHibernate" />
+    <None Remove="System.Data.SqlClient" />
   </ItemGroup>
 
   <ItemGroup>

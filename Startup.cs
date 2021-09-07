@@ -27,15 +27,15 @@ namespace StockRocket
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<ApiDbContext>(options =>
                 options.UseSqlite(
                     Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<ApiDbContext>();
 
             services.AddIdentityServer()
-                .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
+                .AddApiAuthorization<ApplicationUser, ApiDbContext>();
 
             services.AddAuthentication()
                 .AddIdentityServerJwt();
@@ -73,7 +73,6 @@ namespace StockRocket
             app.UseRouting();
 
             app.UseAuthentication();
-            app.UseIdentityServer();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {

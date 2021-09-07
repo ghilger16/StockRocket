@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using StockRocket.Data;
+using StockRocket.Models;
 using StockRocket.Services;
 
 namespace StockRocket.Controllers
@@ -16,6 +18,8 @@ namespace StockRocket.Controllers
 
     public class StockController : ControllerBase
     {
+
+
         private readonly IStockApiService _StockApiService;
 
         public StockController(IStockApiService StockApiService)
@@ -33,5 +37,6 @@ namespace StockRocket.Controllers
 
             return Ok(result);
         }
+
     }
 }

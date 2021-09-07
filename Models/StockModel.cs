@@ -12,8 +12,6 @@ namespace StockRocket.Models
 
         public string CompanyName { get; set; }
 
-        public double Close { get; set; }
-
         public bool IsUSMarketOpen { get; set; }
 
         public double LatestPrice { get; set; }

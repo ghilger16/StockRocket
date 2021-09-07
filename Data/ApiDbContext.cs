@@ -11,14 +11,16 @@ using Microsoft.AspNetCore.Identity;
 
 namespace StockRocket.Data
 {
-    public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
+    public class ApiDbContext : ApiAuthorizationDbContext<ApplicationUser>
     {
-        public ApplicationDbContext(
+        public ApiDbContext(
             DbContextOptions options,
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
         {
 
         }
+
+        public DbSet<StockModel> Stocks {get; set;}
     }
 
     
