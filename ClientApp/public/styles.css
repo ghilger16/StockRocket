@@ -14,9 +14,44 @@ body {
 
 html {
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
+
 /* Typography */
+
+
+html {
+    font-size: 18pt;
+}
+
+@media screen and (max-width: 1920px) {
+
+    html {
+        font-size: 13pt;
+    }
+}
+
+@media screen and (max-width: 1152px) {
+
+    html {
+        font-size: 14pt;
+    }
+}
+
+@media screen and (max-width: 736px) {
+
+    html {
+        font-size: 12pt;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    html {
+        font-size: 11pt;
+    }
+}
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--ff-accent);
@@ -32,19 +67,26 @@ p, .nav-item {
     text-transform: uppercase;
 }
 
+ol, ul {
+   list-style: none;
+}
+
+
+
 /* Section */
+
+
 
 header {
     grid-area: header;
     justify-self: end;
-    text-align: left;
+    text-align: right;
     padding: 0 10rem 0 5rem;
     width: 35rem;
 }
 
 section > .image {
     grid-area: image;
-    max-width: 60rem;
     position: relative;
     height: 100vh;
 }
@@ -94,6 +136,7 @@ a.arrow {
     width: 6rem;
     background-color: var(--clr-primary-400);
 }
+
 
 /* Summary */
 
@@ -164,3 +207,28 @@ a.arrow {
     width: 50%;
 }
 
+@media screen and (max-width: 1152px) {
+
+    html {
+        font-size: 14pt;
+    }
+
+    section.intro, section.first, section.second {
+        grid-template-areas: "header" "image" "header";
+        grid-template-columns: 1fr;
+        grid-template-rows: 3fr;
+    }
+
+    section > .image {
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    section > header {
+        justify-self: start;
+        padding: 0;
+        text-align: left;
+        width: 100%;
+    }
+ }
