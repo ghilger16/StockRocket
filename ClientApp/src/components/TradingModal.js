@@ -51,7 +51,7 @@ const TradingModal = () => {
                 <div class="row">
                     <div class="col-5">
 
-                        <h4>Symbol</h4>
+                        <h6>Symbol</h6>
                         <form onSubmit={handleStockInfoSubmit}>
                             <input type="input" value={searchQuery.toUpperCase()} onChange={handleOnChange}/>
                         </form>
@@ -68,19 +68,19 @@ const TradingModal = () => {
 
             {(stockInfo.symbol && searchQuery) ?
                 <div>
-                    <h3 class="d-flex justify-content-start mt-4 ml-5">{stockInfo.companyName}</h3>
+                    <p class="d-flex justify-content-start mt-4 ml-5">{stockInfo.companyName}</p>
                     <div class="container ml-5">
                         <div class="row">
                             <div class="col-4 border-top border-right">
 
-                                <h5>{currentPrice}</h5>
-                                <h5 class={isNegative}>{stockInfo.change}  ({changePercent.toFixed(2)}%)</h5>
+                                <p>{currentPrice}</p>
+                                <p class={isNegative}>{stockInfo.change}  ({changePercent.toFixed(2)}%)</p>
 
                             </div>
                             <div class="col-6 border-top">
 
-                                <h5>52 week range {stockInfo.week52Low.toFixed(2)} - {stockInfo.week52High.toFixed(2)}</h5>
-                                <h5>Volume</h5>
+                                <p>52 week range {stockInfo.week52Low.toFixed(2)} - {stockInfo.week52High.toFixed(2)}</p>
+                                <p>Volume</p>
 
                             </div>
                         </div>
@@ -90,14 +90,14 @@ const TradingModal = () => {
                         <div class="row ml-5">
                             <div class="col-4">
 
-                                <h5>Quantity (shares)</h5>
+                                <p>Quantity (shares)</p>
                                 <form onSubmit={handleUserHoldingsSubmit}>
                                 <input type="number" class="form-control" onChange={(e) => setUserShareQuantity(e.target.value)} />
                                 </form>
                             </div>
                             <div class="col ml-5">
 
-                                <h5>Estimated Balance</h5>
+                                <p>Estimated Balance</p>
                                 <p>{`$${estimatedBalance}`}</p>
                             </div>
                         </div>

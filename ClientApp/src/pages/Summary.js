@@ -11,10 +11,10 @@ import Holdings from "../components/Holdings"
 
 const Summary = () => {
     const [selected, setSelected] = useState("Performance");
-    const [showModal, setShowModal] = useState(false);
+    const [showModal, setShowModal] = useState(true);
  
     return (
-        <>
+        
         <div class="summary">
             
             <Jumbotron />
@@ -58,7 +58,7 @@ const Summary = () => {
         </div>
         
             </div>
-            </>
+            
     );
 };
 
