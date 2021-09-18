@@ -48,19 +48,19 @@ html {
 
 @media screen and (max-width: 1152px) {
     html {
-        font-size: 14pt;
+        font-size: 12pt;
     }
 }
 
 @media screen and (max-width: 736px) {
     html {
-        font-size: 12pt;
+        font-size: 10pt;
     }
 }
 
 @media screen and (max-width: 480px) {
     html {
-        font-size: 11pt;
+        font-size: 9pt;
     }
 }
 
@@ -164,7 +164,7 @@ h6 {
 }
 
 
-/* Image */
+/* Arrow */
 
 
 a.arrow {
@@ -729,6 +729,8 @@ padding: 0 5rem;
 .summary-jumbotron i {
     color: var(--clr-primary-400);
     transform: scale(1.5);
+    margin-bottom: -20px;
+    text-align: left;
 }
 
 .card {
