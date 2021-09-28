@@ -31,7 +31,7 @@ namespace StockRocket.Controllers
         }
 
         // GET: Book/Details/5
-        public ActionResult Details(int id)
+        public IActionResult Details(int id)
         {
             Book book = new Book();
             using (ISession session = NhibernateSession.OpenSession())
@@ -43,14 +43,14 @@ namespace StockRocket.Controllers
         }
 
         // GET: Book/Create
-        public ActionResult Create()
+        public IActionResult Create()
         {
             return View();
         }
 
         // POST: Book/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public IActionResult Create(IFormCollection collection)
         {
             try
             {
@@ -77,7 +77,7 @@ namespace StockRocket.Controllers
         }
 
         // GET: Book/Edit/5
-        public ActionResult Edit(int id)
+        public IActionResult Edit(int id)
         {
             Book book = new Book();
             using (ISession session = NhibernateSession.OpenSession())
@@ -91,7 +91,7 @@ namespace StockRocket.Controllers
 
         // POST: Book/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public IActionResult Edit(int id, IFormCollection collection)
         {
             try
             {
@@ -120,7 +120,7 @@ namespace StockRocket.Controllers
         }
 
         // GET: Book/Delete/5
-        public ActionResult Delete(int id)
+        public IActionResult Delete(int id)
         {
             // Delete the book
             Book book = new Book();
@@ -134,7 +134,7 @@ namespace StockRocket.Controllers
 
         // POST: Book/Delete/5
         [HttpPost]
-        public ActionResult Delete(long id, FormCollection collection)
+        public IActionResult Delete(long id, IFormCollection collection)
         {
             try
             {

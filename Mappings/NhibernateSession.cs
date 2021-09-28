@@ -13,9 +13,9 @@ namespace StockRocket.Mappings
         public static ISession OpenSession()
         {
             var configuration = new Configuration();
-            var configurationPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,@"~\Models\hibernate.cfg.xml");
+            var configurationPath = Path.Combine(@"Models/hibernate.cfg.xml");
             Configuration configuration1 = configuration.Configure(configurationPath);
-            var bookConfigurationFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"~\Mappings\Book.hbm.xml");
+            var bookConfigurationFile = Path.Combine(@"Mappings/Book.hbm.xml");
             configuration.AddFile(bookConfigurationFile);
             ISessionFactory sessionFactory = configuration.BuildSessionFactory();
             return sessionFactory.OpenSession();

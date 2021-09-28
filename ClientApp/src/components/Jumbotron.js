@@ -6,7 +6,6 @@ const Jumbotron = () => {
     return (
         <div class="summary-jumbotron">
             <div class="bg-light">
-                
                     <div class="row">
                         <div class="col-7">
                             <h1 class="d-flex justify-content-end mt-3 mr-5"><i class="ri-rocket-2-fill mr-4 mt-2"></i>Gregory Hilger - Account Summary</h1>
