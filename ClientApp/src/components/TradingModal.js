@@ -13,7 +13,7 @@ const TradingModal = () => {
 
     const handleOnChange = (e) => {
         setSearchQuery(e.target.value.split(" ").join("").toUpperCase());
-        if (!searchQuery) {
+        if (searchQuery) {
             setAlertError("");
             setStockInfo("");
             setUserShareQuantity("");
@@ -57,10 +57,7 @@ const TradingModal = () => {
                         </form>
 
                     </div>
-                    <div class="col ml-3">
-
-                        <p></p>
-                        <p></p>
+                    <div class="col ml-1">
 
                     </div>
                 </div>
@@ -104,7 +101,7 @@ const TradingModal = () => {
                     </div>
 
                     <div class="d-flex justify-content-center mt-4">
-                        <button class="btn btn-primary" onClick={handleUserHoldingsSubmit}>Submit</button>
+                        {!error && <button class="btn btn-primary" onClick={handleUserHoldingsSubmit}>Submit</button>}
                     </div> 
                 </div>
                 : <span class="rocket-image"><img src="images/rocket.jpg" alt="" /></span>}

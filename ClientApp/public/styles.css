@@ -753,26 +753,107 @@ padding: 0 5rem;
     color: var(--clr-primary-400);
 }
 
-.modal-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(71,200,170,.25);
+@media screen and (max-width: 1920px) {
+    .modal-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(71,200,170,.25);
+    }
 }
 
-.modal-container {
-    position: fixed;
-    top: 57%;
-    left: 50%;
-    transform: translate(-55%, -75%);
-    padding: 1px;
-    z-index: 1000;
-    width: 30%;
-    height: 65%;
-    background-color: white;
-    border-radius: 15px;
+@media screen and (max-width: 1152px) {
+    .modal-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(71,200,170,.25);
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .modal-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(71,200,170,.25);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .modal-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(71,200,170,.25);
+    }
+}
+
+@media screen and (max-width: 1920px) {
+    .modal-container {
+        position: fixed;
+        top: 62%;
+        left: 50%;
+        transform: translate(-55%, -75%);
+        padding: 1px;
+        z-index: 1000;
+        width: 30%;
+        height: 72%;
+        background-color: white;
+        border-radius: 15px;
+    }
+}
+
+@media screen and (max-width: 1152px) {
+    .modal-container {
+        position: fixed;
+        top: 73%;
+        left: 50%;
+        transform: translate(-55%, -75%);
+        padding: 1px;
+        z-index: 1000;
+        width: 45%;
+        height: 95%;
+        background-color: white;
+        border-radius: 15px;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .modal-container {
+        position: fixed;
+        top: 70%;
+        left: 54%;
+        transform: translate(-55%, -75%);
+        padding: 1px;
+        z-index: 1000;
+        width: 65%;
+        height: 80%;
+        background-color: white;
+        border-radius: 15px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .modal-container {
+        position: fixed;
+        top: 57%;
+        left: 55%;
+        transform: translate(-55%, -75%);
+        padding: 1px;
+        z-index: 1000;
+        width: 90%;
+        height: 57%;
+        background-color: white;
+        border-radius: 15px;
+    }
 }
 
 .negative {
