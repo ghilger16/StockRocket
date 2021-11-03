@@ -52,9 +52,10 @@ html {
     }
 }
 
-@media screen and (max-width: 736px) {
+@media screen and (max-width: 768px) {
     html {
         font-size: 10pt;
+        
     }
 }
 
@@ -752,50 +753,17 @@ padding: 0 5rem;
 .nav-item:hover {
     color: var(--clr-primary-400);
 }
-
-@media screen and (max-width: 1920px) {
-    .modal-wrapper {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(71,200,170,.25);
-    }
+ 
+.modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(71,200,170,.25);
 }
 
-@media screen and (max-width: 1152px) {
-    .modal-wrapper {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(71,200,170,.25);
-    }
-}
 
-@media screen and (max-width: 736px) {
-    .modal-wrapper {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(71,200,170,.25);
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .modal-wrapper {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(71,200,170,.25);
-    }
-}
 
 @media screen and (max-width: 1920px) {
     .modal-container {
@@ -810,50 +778,81 @@ padding: 0 5rem;
         background-color: white;
         border-radius: 15px;
     }
+    .rocket-image img {
+        height: 50%;
+        left: 20%;
+        position: relative;
+        top: 25px;
+        width: 60%;
+    }
 }
 
 @media screen and (max-width: 1152px) {
     .modal-container {
         position: fixed;
-        top: 73%;
-        left: 50%;
-        transform: translate(-55%, -75%);
-        padding: 1px;
-        z-index: 1000;
-        width: 45%;
-        height: 95%;
-        background-color: white;
-        border-radius: 15px;
-    }
-}
-
-@media screen and (max-width: 736px) {
-    .modal-container {
-        position: fixed;
-        top: 70%;
+        top: 49%;
         left: 54%;
         transform: translate(-55%, -75%);
         padding: 1px;
         z-index: 1000;
-        width: 65%;
-        height: 80%;
+        width: 72%;
+        height: 53%;
         background-color: white;
         border-radius: 15px;
     }
+    .rocket-image img {
+        height: 50%;
+        left: 25%;
+        position: relative;
+        top: 25px;
+        width: 50%;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .modal-container {
+        position: fixed;
+        top: 49%;
+        left: 54%;
+        transform: translate(-55%, -75%);
+        padding: 1px;
+        z-index: 1000;
+        width: 72%;
+        height: 53%;
+        background-color: white;
+        border-radius: 15px;
+    }
+    .rocket-image img {
+        height: 50%;
+        left: 25%;
+        position: relative;
+        top: 25px;
+        width: 50%;
+    }
+
 }
 @media screen and (max-width: 480px) {
     .modal-container {
         position: fixed;
-        top: 57%;
+        top: 75%;
         left: 55%;
         transform: translate(-55%, -75%);
         padding: 1px;
         z-index: 1000;
-        width: 90%;
-        height: 57%;
+        width: 100%;
+        height: 100%;
         background-color: white;
-        border-radius: 15px;
+        border-radius: 0px;
     }
+    .rocket-image img {
+        height: 50%;
+        left: 15%;
+        position: relative;
+        top: 60px;
+        width: 75%;
+    }
+
 }
 
 .negative {
@@ -864,10 +863,3 @@ padding: 0 5rem;
     color: green;
 }
 
-.rocket-image img {
-    height: 50%;
-    left: 25%;
-    position: relative;
-    top: 20px;
-    width: 50%;
-}
