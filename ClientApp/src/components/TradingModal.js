@@ -45,7 +45,7 @@ const TradingModal = () => {
 
     return (
         <div>
-            <h1 class="d-flex justify-content-center">Enter Order</h1>
+            <h4 class="d-flex justify-content-center">Enter Order</h4>
             {error && searchQuery && <Alert variant={alertVariant}>{error}</Alert>}
             <div class="container">
                 <div class="row">

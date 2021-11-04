@@ -763,76 +763,31 @@ padding: 0 5rem;
     background-color: rgba(71,200,170,.25);
 }
 
-
-
-@media screen and (max-width: 1920px) {
+@media screen and (min-width: 769px) {
     .modal-container {
-        position: fixed;
-        top: 62%;
+        position: absolute;
+        top: 50%;
         left: 50%;
-        transform: translate(-55%, -75%);
+        transform: translate(-50%, -60%);
         padding: 1px;
-        z-index: 1000;
-        width: 30%;
-        height: 72%;
+        width: 32%;
+        height: 63%;
+        max-width: 100%;
+        max-height: 100%;
         background-color: white;
         border-radius: 15px;
+        box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
     }
     .rocket-image img {
         height: 50%;
-        left: 20%;
+        left: 30%;
         position: relative;
-        top: 25px;
-        width: 60%;
+        top: 15px;
+        width: 45%;
     }
-}
-
-@media screen and (max-width: 1152px) {
-    .modal-container {
-        position: fixed;
-        top: 49%;
-        left: 54%;
-        transform: translate(-55%, -75%);
-        padding: 1px;
-        z-index: 1000;
-        width: 72%;
-        height: 53%;
-        background-color: white;
-        border-radius: 15px;
-    }
-    .rocket-image img {
-        height: 50%;
-        left: 25%;
-        position: relative;
-        top: 25px;
-        width: 50%;
-    }
-
 }
 
 @media screen and (max-width: 768px) {
-    .modal-container {
-        position: fixed;
-        top: 49%;
-        left: 54%;
-        transform: translate(-55%, -75%);
-        padding: 1px;
-        z-index: 1000;
-        width: 72%;
-        height: 53%;
-        background-color: white;
-        border-radius: 15px;
-    }
-    .rocket-image img {
-        height: 50%;
-        left: 25%;
-        position: relative;
-        top: 25px;
-        width: 50%;
-    }
-
-}
-@media screen and (max-width: 480px) {
     .modal-container {
         position: fixed;
         top: 75%;
@@ -845,6 +800,7 @@ padding: 0 5rem;
         background-color: white;
         border-radius: 0px;
     }
+
     .rocket-image img {
         height: 50%;
         left: 15%;
@@ -852,7 +808,6 @@ padding: 0 5rem;
         top: 60px;
         width: 75%;
     }
-
 }
 
 .negative {
