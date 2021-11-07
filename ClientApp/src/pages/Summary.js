@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react"
+﻿import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import Jumbotron from "../components/Jumbotron"
@@ -10,14 +10,30 @@ import TradingModal from "../components/TradingModal"
 import Holdings from "../components/Holdings"
 
 const Summary = () => {
+    const [showSmallJumbotron, setShowSmallJumbotron] = useState(false);
     const [selected, setSelected] = useState("Performance");
-    const [showModal, setShowModal] = useState(true);
+    const [showModal, setShowModal] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth > 991) {
+                setShowSmallJumbotron(false);
+            } else if (window.innerWidth < 991) {
+                setShowSmallJumbotron(true);
+            }
+    };
+        window.addEventListener('resize', handleResize);
+
+    return () => {
+        window.removeEventListener('resize', handleResize);
+    };
+}, []);
  
     return (
         
         <div class="summary">
             
-            <Jumbotron />
+            <Jumbotron size={showSmallJumbotron} />
           
          <div class="row justify-content-around mt-3">
                     <div class="col-1 mt-5">
