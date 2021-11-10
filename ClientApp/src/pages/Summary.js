@@ -1,16 +1,13 @@
 ﻿import React, { useState, useEffect } from "react"
-import { Link } from "react-router-dom";
-import { Card } from "react-bootstrap";
 import Jumbotron from "../components/Jumbotron"
 import TabNav from "../components/TabNav"
 import Tab from "../components/Tab"
-import Home from "./Home"
 import Modal from "../components/Modal";
 import TradingModal from "../components/TradingModal"
 import Holdings from "../components/Holdings"
 
 const Summary = () => {
-    const [showSmallJumbotron, setShowSmallJumbotron] = useState(true);
+    const [showSmallJumbotron, setShowSmallJumbotron] = useState(false);
     const [selected, setSelected] = useState("Performance");
     const [showModal, setShowModal] = useState(false);
 
@@ -41,14 +38,14 @@ const Summary = () => {
                         <h1 class="ml-3">Details</h1>
 
                 </div>
-                {!showSmallJumbotron && <div class="col-3">
-
-                    <p class="nav-item" onClick={(e) => setShowModal(true)} ><i class="ri-add-line" /> Buy and sell stocks</p>
+                <div class="col-3">
+                    {!showSmallJumbotron &&
+                    <p class="nav-item" onClick={(e) => setShowModal(true)} ><i class="ri-add-line" /> Buy and sell stocks</p>}
                     <Modal open={showModal} onClose={() => setShowModal(false)}>
                         <TradingModal />
                     </Modal>
 
-                </div>}
+                </div>
         </div>
 
         

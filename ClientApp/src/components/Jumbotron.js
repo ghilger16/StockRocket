@@ -1,5 +1,4 @@
 ﻿import React from "react"
-import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import Modal from "../components/Modal";
 import TradingModal from "../components/TradingModal"
@@ -65,7 +64,7 @@ const Jumbotron = ({ showSmallJumbotron ,showModal, setShowModal }) => {
                             <p class="d-flex justify-content-center">300</p>
                             </div>
                     </div>
-                    <div class="row">
+                    <div class="row mt-3">
                         <div class="col-6">
                             <h6 class="d-flex justify-content-center">Returns</h6>
                         </div>
@@ -74,10 +73,12 @@ const Jumbotron = ({ showSmallJumbotron ,showModal, setShowModal }) => {
                             </div>  
                     </div>
                     <div class="row d-flex justify-content-end mr-5">
+                        
                         <p class="nav-item" onClick={(e) => setShowModal(true)} ><i class="ri-add-line" /> Buy and sell stocks</p>
-                        <Modal open={showModal} onClose={() => setShowModal(false)}>
+                        <Modal open={showModal} onClose={(e) => setShowModal(false)}>
                             <TradingModal />
-                        </Modal>
+                            </Modal>
+                           
                         </div>
                 </div> }
         </div >

@@ -4,7 +4,7 @@ import { Alert } from "react-bootstrap";
 
 const TradingModal = () => {
     const [searchQuery, setSearchQuery] = useState("");
-    const { getStockInfo, stockInfo, setStockInfo, error, setAlertError, userShareQuantity, setUserShareQuantity, setUserHoldings, userHoldings, setAlertVariant, alertVariant } = useContext(Context);
+    const { getStockInfo, stockInfo, setStockInfo, error, setAlertError, userShareQuantity, setUserShareQuantity, setUserHoldings, userHoldings, alertVariant } = useContext(Context);
 
     const handleStockInfoSubmit = (e) => {
         e.preventDefault();
@@ -39,7 +39,7 @@ const TradingModal = () => {
    
     const currentPrice = !stockInfo.isUSMarketOpen ? stockInfo.latestPrice : stockInfo.close;
     const changePercent = stockInfo.changePercent * 100;
-    const isNegative = (Math.sign(stockInfo.change) == -1) ? "negative" : "positive";
+    const isNegative = (Math.sign(stockInfo.change) === -1) ? "negative" : "positive";
     const estimatedBalance = userShareQuantity ? userShareQuantity * currentPrice : "--.--";
     
 
