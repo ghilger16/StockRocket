@@ -40,30 +40,28 @@ html {
     font-size: 18pt;
 }
 
-@media screen and (max-width: 1920px) {
-    html {
-        font-size: 13pt;
-    }
-}
-
-@media screen and (max-width: 1152px) {
+@media screen and (min-width: 991px) {
     html {
         font-size: 12pt;
     }
 }
 
-@media screen and (max-width: 768px) {
+
+
+@media screen and (max-width: 991px) {
     html {
-        font-size: 10pt;
+        font-size: 11pt;
         
     }
 }
 
-@media screen and (max-width: 480px) {
-    html {
-        font-size: 9pt;
+@media screen and (max-width: 400px){
+    html{
+        font-size: 8pt;
     }
 }
+
+
 
 body {
     color: #000000;
@@ -737,7 +735,8 @@ padding: 0 5rem;
 .card {
     box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: 100%;
+    width: 275px;
+    height: 100px;
 }
 
     .card:hover {
@@ -782,6 +781,21 @@ padding: 0 5rem;
         position: relative;
         top: 15px;
         width: 45%;
+    }
+    .summary-jumbotron i {
+        color: var(--clr-primary-400);
+        transform: scale(1.5);
+        margin-bottom: -20px;
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 991px){
+    .summary-jumbotron i {
+        color: var(--clr-primary-400);
+        transform: scale(5);
+        margin-bottom: 25px;
+        text-align: left;
     }
 }
 

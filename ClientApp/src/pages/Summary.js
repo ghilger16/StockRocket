@@ -20,7 +20,7 @@ const Summary = () => {
             }
     };
         window.addEventListener('resize', handleResize);
-
+        handleResize();
     return () => {
         window.removeEventListener('resize', handleResize);
     };
@@ -32,12 +32,16 @@ const Summary = () => {
             
             <Jumbotron showSmallJumbotron={showSmallJumbotron} open={showModal} setShowModal={setShowModal} />
           
-         <div class="row justify-content-around mt-3">
-                    <div class="col-1 mt-5">
+            <div class="row justify-content-around mt-3">
+                
+                  <div class="col-1 mt-5">
 
                         <h1 class="ml-3">Details</h1>
 
-                </div>
+                    </div> 
+
+                  
+                    
                 <div class="col-3">
                     {!showSmallJumbotron &&
                     <p class="nav-item" onClick={(e) => setShowModal(true)} ><i class="ri-add-line" /> Buy and sell stocks</p>}

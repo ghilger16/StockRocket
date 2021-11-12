@@ -11,7 +11,7 @@ const Jumbotron = ({ showSmallJumbotron ,showModal, setShowModal }) => {
             <div class="bg-light">
                 <div class="row">
                     <div class="col-7">
-                        <h1 class="d-flex justify-content-end mt-3 mr-5"><i class="ri-rocket-2-fill mr-4 mt-2"></i>Gregory Hilger - Account Summary</h1>
+                        <h1 class="d-flex justify-content-end mt-3 mr-4 pl-2 pt-1"><i class="ri-rocket-2-fill mr-4 mt-2"></i>Gregory Hilger - Account Summary</h1>
                     </div>
                     <div class="col-2 ml-5">
                         <div class="container mt-4 ml-5">
@@ -38,14 +38,14 @@ const Jumbotron = ({ showSmallJumbotron ,showModal, setShowModal }) => {
                 <div class="bg-light">
                     
                     <div class="row d-flex justify-content-center">
-                        <i class="ri-rocket-2-fill mr-4 mt-3"></i>
+                        <i class="ri-rocket-2-fill mr-2 mt-5"></i>
                     </div>
                     <div class="row d-flex justify-content-center mt-4">
                             <h1>Gregory Hilger - Account Summary</h1>
                     </div>
                     <div class="row d-flex justify-content-center">
-                        <div class="col-3 mr-5">
-                            <div class="container mt-4 ml-5">
+                        <div class="col-4 mr-5">
+                            <div class="container mt-3 ml-4">
                                 <Card class="card">
                                     <Card.Body>
                                         <p>Balance</p>
@@ -57,18 +57,18 @@ const Jumbotron = ({ showSmallJumbotron ,showModal, setShowModal }) => {
                         
                     
                     <div class="row mt-5">
-                        <div class="col-6">
+                        <div class="col ">
                             <h6 class="d-flex justify-content-center">Earnings</h6>
                             </div>
-                        <div class="col-6">
+                        <div class="col">
                             <p class="d-flex justify-content-center">300</p>
                             </div>
                     </div>
-                    <div class="row mt-3">
-                        <div class="col-6">
+                    <div class="row mt-4">
+                        <div class="col">
                             <h6 class="d-flex justify-content-center">Returns</h6>
                         </div>
-                        <div class="col-6">
+                        <div class="col">
                             <p class="d-flex justify-content-center">300</p>
                             </div>  
                     </div>
