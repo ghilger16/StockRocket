@@ -32,29 +32,26 @@ const Summary = () => {
             
             <Jumbotron showSmallJumbotron={showSmallJumbotron} open={showModal} setShowModal={setShowModal} />
           
-            <div class="row justify-content-around mt-3">
-                
-                  <div class="col-1 mt-5">
-
-                        <h1 class="ml-3">Details</h1>
-
-                    </div> 
-
-                  
-                    
-                <div class="col-3">
+            <div class="row justify-content-end mt-3 mr-5">
+   
+               
                     {!showSmallJumbotron &&
                     <p class="nav-item" onClick={(e) => setShowModal(true)} ><i class="ri-add-line" /> Buy and sell stocks</p>}
                     <Modal open={showModal} onClose={() => setShowModal(false)}>
                         <TradingModal />
                     </Modal>
 
+            </div>
+            
+                <div class="row justify-content-center">
+                <h1 class="">Details</h1>
                 </div>
-        </div>
+                        
+             
 
         
         <div class="row justify-content-center">
-                <div class="col-8 ml-5">
+                
 
                         <TabNav tabs={["Performance", "Activity", "Asset Classes", "Holdings"]} selected={selected} setSelected={setSelected}>
                         <Tab isSelected={selected === "Performance"}>
@@ -71,7 +68,7 @@ const Summary = () => {
                         </Tab>
                     </TabNav>
 
-                </div>
+              
         </div>
         
             </div>
